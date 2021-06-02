@@ -1,0 +1,35 @@
+<form action="#" [formGroup]="form">
+  <div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <label>
+        <input matInput formControlName="name" required>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Mobile</mat-label>
+      <label>
+        <input matInput formControlName="mobile" required>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Type</mat-label>
+      <mat-select formControlName="type">
+        <mat-option *ngFor="let type of types" [value]="type.name">
+          {{type.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Policies</mat-label>
+      <mat-select formControlName="policies" multiple>
+        <mat-option *ngFor="let policy of policies" [value]="policy.id">{{policy.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="form.invalid">Save</button>
+  </div>
+</form>
