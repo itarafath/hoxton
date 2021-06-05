@@ -33,4 +33,17 @@ class BaseRepository implements IBaseRepository
     {
         return $this->model->find($id);
     }
+
+    public function update($input, $id)
+    {
+        $query = $this->model->newQuery();
+
+        $model = $query->findOrFail($id);
+
+        $model->fill($input);
+
+        $model->save();
+
+        return $model;
+    }
 }

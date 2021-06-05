@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup} from '@angular/forms';
-import {IPolicy} from './model/policy.model';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +7,6 @@ import {IPolicy} from './model/policy.model';
 })
 export class AppComponent implements OnInit {
   title = 'frontend';
-  hide = true;
-
-
-  constructor() {
-  }
 
   ngOnInit(): void {
 

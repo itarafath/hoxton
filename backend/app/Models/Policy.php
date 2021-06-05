@@ -9,4 +9,9 @@ class Policy extends Model
 {
     protected $guarded = [];
     use HasFactory;
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class)->withPivot(['role_id']);
+    }
 }

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {LeadService} from '../../services/lead.service';
-import {IPolicy} from '../../model/policy.model';
+import {LeadService} from '../../../services/lead.service';
+import {IPolicy} from '../../../model/policy.model';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({

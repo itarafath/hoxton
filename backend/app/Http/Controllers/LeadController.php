@@ -94,11 +94,17 @@ class LeadController extends Controller
      * @param \Illuminate\Http\Request $request
      * @param int                      $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        $lead = $this->leadRepository->update($input, $id);
+
+        return Response::json([
+            'success' => true,
+            'data' => $lead
+        ], 201);
     }
 
     /**

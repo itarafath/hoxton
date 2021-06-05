@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\LeadRequest;
 use App\Repositories\IPolicyRepository;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -54,7 +53,14 @@ class PolicyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->only('name');
+        $policy = $this->policyRepository->create($input);
+
+        $coordinators = $request->get('coordinators');
+        $advisors = $request->get('advisors');
+
+        $policy->users()->attach($advisors, ['role_id' => 2]);
+        $policy->users()->attach($coordinators, ['role_id' => 3]);
     }
 
     /**

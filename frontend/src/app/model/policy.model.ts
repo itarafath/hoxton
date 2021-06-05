@@ -1,8 +1,8 @@
-import {ICoordinator} from './coordinator.model';
+import {IUser} from './user.model';
 
 export interface IPolicy {
   id: number;
   name: string;
   type: string;
-  coordinator?: ICoordinator;
+  coordinator?: IUser;
 }

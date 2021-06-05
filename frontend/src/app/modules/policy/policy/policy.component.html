@@ -1,0 +1,26 @@
+<form action="#" [formGroup]="form">
+  <div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <label>
+        <input matInput formControlName="name" required>
+      </label>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Coordinators</mat-label>
+      <mat-select formControlName="coordinators" multiple>
+        <mat-option *ngFor="let coordinator of coordinators" [value]="coordinator.id">{{coordinator.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Advisors</mat-label>
+      <mat-select formControlName="advisors" multiple>
+        <mat-option *ngFor="let advisor of advisors" [value]="advisor.id">{{advisor.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="form.invalid">Save</button>
+  </div>
+</form>

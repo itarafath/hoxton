@@ -1,13 +1,11 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
-import {LeadComponent} from './lead/lead.component';
-import {LeadResolver} from '../services/lead.resolver';
+import {LoginComponent} from './login/login.component';
 
 const routes: Routes = [
   {
     path: '',
-    resolve: {leadResolver: LeadResolver},
-    component: LeadComponent,
+    component: LoginComponent,
   }
 ];
 
@@ -16,5 +14,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 
-export class LeadRoutingModule {
+export class LoginRoutingModule {
 }
