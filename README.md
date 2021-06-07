@@ -19,7 +19,9 @@ git clone https://github.com/itarafath/hoxton
 ## Backend
 
 ```bash
-cd  hoxton/backend
+cd hoxton
+git checkout main
+cd backend
 ./vendor/bin/sail up -d
 ./vendor/bin/sail artisan migrate:fresh --seed
 ```
