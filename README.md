@@ -2,7 +2,7 @@
 
 ## System requirements 
 * `git`  installed
-* `docker` installed 
+* `docker` installed
 * `docker compose` installed 
 * `node` installed
 
@@ -14,6 +14,8 @@ You should start by cloning the repository into your local machine.
 git clone https://github.com/itarafath/hoxton
 ```
 
+---
+
 ## Backend
 
 ```bash
@@ -22,6 +24,7 @@ cd  hoxton/backend
 ./vendor/bin/sail artisan migrate:fresh --seed
 ```
 
+---
 
 ## Frontend
 
@@ -31,3 +34,10 @@ npm install
 npm run start
 ```
 Go to your browser and hit following URL. "localhost" or 127.0.0.1
+
+
+---
+
+#### user credentials
+username : check user table and select any user \
+password : ```password```
